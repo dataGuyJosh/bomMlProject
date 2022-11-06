@@ -1,0 +1,7 @@
+autopep8
+matplotlib
+numpy
+pandas
+requests
+scipy
+sklearn
