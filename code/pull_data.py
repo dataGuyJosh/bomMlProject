@@ -22,7 +22,5 @@ def get_data(n_months):
 
     return obs_df
 
-
-obs_df = get_data(12)
-
-obs_df.to_csv('obs_df.csv', index=False)
+def save_data(n_months):
+    get_data(n_months).to_csv('obs_df.csv', index=False)

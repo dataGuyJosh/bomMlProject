@@ -23,17 +23,10 @@ for feature in features_le:
 
 obs_df = obs_df.fillna(0)
 
-features = ['Date', 'Minimum temperature (°C)', 'Maximum temperature (°C)',
-            'Rainfall (mm)', 'Evaporation (mm)', 'Sunshine (hours)',
-            'Direction of maximum wind gust ', 'Speed of maximum wind gust (km/h)',
-            'Time of maximum wind gust', '9am Temperature (°C)',
-            '9am relative humidity (%)', '9am cloud amount (oktas)',
-            '9am wind direction', '9am wind speed (km/h)', '9am MSL pressure (hPa)',
-            '3pm Temperature (°C)', '3pm relative humidity (%)',
-            '3pm cloud amount (oktas)', '3pm wind direction',
-            '3pm wind speed (km/h)', '3pm MSL pressure (hPa)']
+features = obs_df.columns.tolist()
 
 target = 'Maximum temperature (°C)'
+# target = 'Rainfall (mm)'
 
 features.remove(target)
 
@@ -46,12 +39,17 @@ dt = dt.fit(X, y)
 multi_reg = linear_model.LinearRegression()
 multi_reg.fit(X, y)
 
-k_fold = KFold(n_splits=5, shuffle=True)
+k_fold = KFold(n_splits=10, shuffle=True)
 
-for clf in [dt, multi_reg]:
-    scores = cross_val_score(clf, X, y, cv=k_fold)
-    print(clf,
-          '\nIndividual Scores:', scores,
-          '\nAverage Score:', scores.mean(),
-          '\nNumber of scores used in Average:', len(scores), '\n'
-          )
+
+def cv_models(models, cv):
+    for model in models:
+        scores = cross_val_score(model, X, y, cv=cv)
+        print(model,
+              '\nIndividual Scores:', scores,
+              '\nAverage Score:', scores.mean(),
+              '\nNumber of scores used in Average:', len(scores), '\n'
+              )
+
+
+cv_models([dt, multi_reg], k_fold)
