@@ -2,7 +2,8 @@ import pandas as pd
 from pull_data import get_data
 from sklearn import preprocessing
 
-from sklearn import linear_model
+from sklearn.preprocessing import PolynomialFeatures
+from sklearn.linear_model import LinearRegression
 from sklearn.tree import DecisionTreeRegressor
 
 from sklearn.model_selection import cross_val_score, KFold
@@ -32,28 +33,34 @@ target = 'Maximum temperature (°C)'
 features.remove('Date')
 features.remove(target)
 
-# # shift target down 1 day and drop null values i.e. predict target based on yesterday's entries
-# obs_df['Target: '+target] = obs_df[target].shift(1)
-# obs_df = obs_df.dropna()
+# shift target down 1 day and drop null values i.e. predict target based on yesterday's entries
+obs_df['target'] = obs_df[target].shift(1)
+obs_df = obs_df.dropna()
 
-# group results by 7 days
-target_column = obs_df[target]
-obs_df.Date = obs_df.index/7
-obs_df.Date = obs_df.Date.astype(int)
-obs_df = obs_df.groupby('Date').agg(list)
-obs_df['target'] = target_column
+# # group results by 7 days
+# target_column = obs_df[target]
+# obs_df.Date = obs_df.index/7
+# obs_df.Date = obs_df.Date.astype(int)
+# obs_df = obs_df.groupby('Date').agg(list)
+# obs_df['target'] = target_column
 
-# X = obs_df[features]
-# y = obs_df['target']
+X = obs_df[features]
+y = obs_df['target']
 
-# dt = DecisionTreeRegressor()
-# dt = dt.fit(X, y)
-
-# multi_reg = linear_model.LinearRegression()
-# multi_reg.fit(X, y)
+# Decision Tree
+dt_model = DecisionTreeRegressor()
+dt_model = dt_model.fit(X, y)
+# Multiple Regression
+multi_reg = LinearRegression()
+multi_reg.fit(X, y)
+# Multivariate Polynomial Regression
+poly_model = PolynomialFeatures(degree=2)
+poly_X = poly_model.fit_transform(X)
+poly_model.fit(poly_X, y)
+regr_model = LinearRegression()
+regr_model.fit(poly_X, y)
 
 # k_fold = KFold(n_splits=10, shuffle=True)
-
 
 # def cv_models(models, cv):
 #     for model in models:
@@ -65,4 +72,4 @@ obs_df['target'] = target_column
 #               )
 
 
-# cv_models([dt, multi_reg], k_fold)
+# cv_models([dt_model, multi_reg, regr_model], k_fold)
