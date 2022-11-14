@@ -1,3 +1,4 @@
+from sklearn.metrics import mean_squared_error
 import pandas as pd
 from pull_data import get_data
 from sklearn import preprocessing
@@ -54,11 +55,24 @@ dt_model = dt_model.fit(X, y)
 multi_reg = LinearRegression()
 multi_reg.fit(X, y)
 # Multivariate Polynomial Regression
-poly_model = PolynomialFeatures(degree=2)
+poly_model = PolynomialFeatures(degree=5)
 poly_X = poly_model.fit_transform(X)
 poly_model.fit(poly_X, y)
 regr_model = LinearRegression()
 regr_model.fit(poly_X, y)
+
+for i in range(1, 11):
+    poly_model = PolynomialFeatures(degree=i)
+    poly_X = poly_model.fit_transform(X)
+    poly_model.fit(poly_X, y)
+    regr_model = LinearRegression()
+    regr_model.fit(poly_X, y)
+    
+    k_fold = KFold(n_splits=10, shuffle=True)
+    # scores = cross_val_score(regr_model, poly_X, y, cv=k_fold)
+    y_pred = regr_model.predict(poly_X)
+    # print(i, scores.mean(), mean_squared_error(y, y_pred, squared=False))
+    print(i, mean_squared_error(y, y_pred, squared=False))
 
 # k_fold = KFold(n_splits=10, shuffle=True)
 
