@@ -28,18 +28,21 @@ for feature in features_le:
 # fill null values with 0
 obs_df = obs_df.fillna(0)
 
-features = obs_df.columns.tolist()
-
 target = 'Maximum temperature (°C)'
 # target = 'Rainfall (mm)'
 
-features.remove('Date')
-features.remove(target)
-
-# shift target down 1 day and drop null values i.e. predict target based on yesterday's entries
+# --- Previous Day ---
+# features = obs_df.columns.tolist()
+# features.remove('Date')
+# features.remove(target)
+# # shift target down 1 day and drop null values i.e. predict target based on yesterday's entries
 # obs_df['target'] = obs_df[target].shift(1)
 # obs_df = obs_df.dropna()
 
+# X = obs_df[features]
+# y = obs_df.target
+
+# --- Previous Week ---
 # create week index
 obs_df['week_index'] = (obs_df.index/7).astype(int)
 # store last value as weekly target
@@ -74,28 +77,29 @@ y = obs_df.target
 dt_model = DecisionTreeRegressor()
 dt_model = dt_model.fit(X, y)
 # Multiple (Linear) Regression
-multi_reg = LinearRegression()
-multi_reg.fit(X, y)
+multi_reg_model = LinearRegression()
+multi_reg_model.fit(X, y)
 # Multivariate Polynomial Regression
-poly_model = PolynomialFeatures(degree=2)
+poly_model = PolynomialFeatures(degree=3)
 poly_X = poly_model.fit_transform(X)
 poly_model.fit(poly_X, y)
 regr_model = LinearRegression()
 regr_model.fit(poly_X, y)
 
 # # testing best degree for polynomial, results suggest 5
-# # for i in range(1, 11):
-# #     poly_model = PolynomialFeatures(degree=i)
-# #     poly_X = poly_model.fit_transform(X)
-# #     poly_model.fit(poly_X, y)
-# #     regr_model = LinearRegression()
-# #     regr_model.fit(poly_X, y)
+# for i in range(1, 11):
+#     poly_model = PolynomialFeatures(degree=i)
+#     poly_X = poly_model.fit_transform(X)
+#     poly_model.fit(poly_X, y)
+#     regr_model = LinearRegression()
+#     regr_model.fit(poly_X, y)
 
-# #     k_fold = KFold(n_splits=10, shuffle=True)
-# #     y_pred = regr_model.predict(poly_X)
-# #     print(i, mean_squared_error(y, y_pred, squared=False))
+#     k_fold = KFold(n_splits=10, shuffle=True)
+#     y_pred = regr_model.predict(poly_X)
+#     print(i, mean_squared_error(y, y_pred, squared=False))
 
 k_fold = KFold(n_splits=10, shuffle=True)
+
 
 def cv_models(models, cv):
     for model in models:
@@ -107,4 +111,4 @@ def cv_models(models, cv):
               )
 
 
-cv_models([dt_model, multi_reg, regr_model], k_fold)
+cv_models([dt_model, multi_reg_model, regr_model], k_fold)
