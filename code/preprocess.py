@@ -47,8 +47,11 @@ target_column = obs_df.groupby('week_index')[target].last()
 # create day index
 obs_df['day_index'] = pd.to_datetime(
     obs_df['Date'], format='%Y-%m-%d').dt.weekday
+# drop date
+obs_df.drop('Date', axis=1, inplace=True)
 
 # TODO guarantee that latest data always falls in a full week (e.g. reverse the day index)
+# drop last day per week (as this is what we're trying to predict)
 obs_df.drop(obs_df[obs_df['day_index'] == 6].index, inplace=True)
 
 # pivot table such that rows are weeks and columns are telemetry per day
@@ -67,41 +70,41 @@ obs_df = obs_df.reset_index().drop(['week_index'], axis=1)
 X = obs_df.drop(['target'], axis=1)
 y = obs_df.target
 
-# # Decision Tree
-# dt_model = DecisionTreeRegressor()
-# dt_model = dt_model.fit(X, y)
-# # Multiple (Linear) Regression
-# multi_reg = LinearRegression()
-# multi_reg.fit(X, y)
-# # Multivariate Polynomial Regression
-# poly_model = PolynomialFeatures(degree=5)
-# poly_X = poly_model.fit_transform(X)
-# poly_model.fit(poly_X, y)
-# regr_model = LinearRegression()
-# regr_model.fit(poly_X, y)
+# Decision Tree
+dt_model = DecisionTreeRegressor()
+dt_model = dt_model.fit(X, y)
+# Multiple (Linear) Regression
+multi_reg = LinearRegression()
+multi_reg.fit(X, y)
+# Multivariate Polynomial Regression
+poly_model = PolynomialFeatures(degree=2)
+poly_X = poly_model.fit_transform(X)
+poly_model.fit(poly_X, y)
+regr_model = LinearRegression()
+regr_model.fit(poly_X, y)
 
-# # # testing best degree for polynomial, results suggest 5
-# # # for i in range(1, 11):
-# # #     poly_model = PolynomialFeatures(degree=i)
-# # #     poly_X = poly_model.fit_transform(X)
-# # #     poly_model.fit(poly_X, y)
-# # #     regr_model = LinearRegression()
-# # #     regr_model.fit(poly_X, y)
+# # testing best degree for polynomial, results suggest 5
+# # for i in range(1, 11):
+# #     poly_model = PolynomialFeatures(degree=i)
+# #     poly_X = poly_model.fit_transform(X)
+# #     poly_model.fit(poly_X, y)
+# #     regr_model = LinearRegression()
+# #     regr_model.fit(poly_X, y)
 
-# # #     k_fold = KFold(n_splits=10, shuffle=True)
-# # #     y_pred = regr_model.predict(poly_X)
-# # #     print(i, mean_squared_error(y, y_pred, squared=False))
+# #     k_fold = KFold(n_splits=10, shuffle=True)
+# #     y_pred = regr_model.predict(poly_X)
+# #     print(i, mean_squared_error(y, y_pred, squared=False))
 
-# k_fold = KFold(n_splits=10, shuffle=True)
+k_fold = KFold(n_splits=10, shuffle=True)
 
-# def cv_models(models, cv):
-#     for model in models:
-#         scores = cross_val_score(model, X, y, cv=cv)
-#         print(model,
-#               '\nIndividual Scores:', scores,
-#               '\nAverage Score:', scores.mean(),
-#               '\nNumber of scores used in Average:', len(scores), '\n'
-#               )
+def cv_models(models, cv):
+    for model in models:
+        scores = cross_val_score(model, X, y, cv=cv)
+        print(model,
+              '\nIndividual Scores:', scores,
+              '\nAverage Score:', scores.mean(),
+              '\nNumber of scores used in Average:', len(scores), '\n'
+              )
 
 
-# cv_models([dt_model, multi_reg, regr_model], k_fold)
+cv_models([dt_model, multi_reg, regr_model], k_fold)
