@@ -4,7 +4,7 @@ from io import StringIO
 from datetime import datetime
 
 bom_url = 'http://reg.bom.gov.au/climate/dwo/~/text/IDCJDW3049.~.csv'
-
+data_path = 'obs_df.csv'
 
 def get_data(n_months):
     obs_df = pd.DataFrame()
@@ -23,4 +23,10 @@ def get_data(n_months):
     return obs_df
 
 def save_data(n_months):
-    get_data(n_months).to_csv('obs_df.csv', index=False)
+    get_data(n_months).to_csv(data_path, index=False)
+
+def read_data():
+    return pd.read_csv(data_path)
+
+def update_data():
+    print('dooo sooomethiiing')

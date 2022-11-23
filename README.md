@@ -7,5 +7,11 @@ https://sparkbyexamples.com/pandas/pandas-group-dataframe-rows-list-groupby/
 https://enjoymachinelearning.com/blog/multivariate-polynomial-regression-python/
 
 # TODOs
-Rewrite preprocessing
+## Rewrite preprocessing
 With around 365 days worth of data. If n is the number of days to use as input per row, then it should be possible to have 365 - n rows to model.
+
+## Updating Data
+Update existing CSV based on missing data rather than doing a complete download each time can rsync do this?
+
+## Generate rows in reverse
+Guarantee that latest data always falls in a full set (e.g. reverse the column index?)

@@ -31,39 +31,27 @@ obs_df = obs_df.fillna(0)
 target = 'Maximum temperature (°C)'
 # target = 'Rainfall (mm)'
 
-# --- Previous Day ---
-# features = obs_df.columns.tolist()
-# features.remove('Date')
-# features.remove(target)
-# # shift target down 1 day and drop null values i.e. predict target based on yesterday's entries
-# obs_df['target'] = obs_df[target].shift(1)
-# obs_df = obs_df.dropna()
-
-# X = obs_df[features]
-# y = obs_df.target
-
 # --- Something Spicey ---
 # How many days data should an individual row contain?
 days_per_row = 2
 # create row index
 obs_df['row_index'] = (obs_df.index/days_per_row).astype(int)
-# store last value as weekly target
+# store last value per row_index as target
 target_column = obs_df.groupby('row_index')[target].last()
 # create column index
 obs_df['col_index'] = obs_df.index % days_per_row
 # drop date
 obs_df.drop('Date', axis=1, inplace=True)
 
-# TODO guarantee that latest data always falls in a full week (e.g. reverse the day index)
-# drop last day per week (as this is what we're trying to predict)
+# drop last day per row_index (as this is what we're trying to predict)
 obs_df.drop(obs_df[obs_df['col_index'] == days_per_row - 1].index, inplace=True)
 
-# pivot table such that rows are weeks and columns are telemetry per day
+# pivot table such that rows are groups of days and columns are telemetry per day
 obs_df = pd.pivot_table(obs_df, index=['row_index'], columns=[
                         'col_index'], aggfunc='last')
 obs_df['target'] = target_column
 
-# drop incomplete weeks (consider alternative solutions such as fillna)
+# drop incomplete rows (consider alternative solutions such as fillna)
 obs_df = obs_df.dropna()
 
 # flatten columns
