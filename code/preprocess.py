@@ -42,24 +42,25 @@ target = 'Maximum temperature (°C)'
 # X = obs_df[features]
 # y = obs_df.target
 
-# --- Previous Week ---
-# create week index
-obs_df['week_index'] = (obs_df.index/7).astype(int)
+# --- Something Spicey ---
+# How many days data should an individual row contain?
+days_per_row = 2
+# create row index
+obs_df['row_index'] = (obs_df.index/days_per_row).astype(int)
 # store last value as weekly target
-target_column = obs_df.groupby('week_index')[target].last()
-# create day index
-obs_df['day_index'] = pd.to_datetime(
-    obs_df['Date'], format='%Y-%m-%d').dt.weekday
+target_column = obs_df.groupby('row_index')[target].last()
+# create column index
+obs_df['col_index'] = obs_df.index % days_per_row
 # drop date
 obs_df.drop('Date', axis=1, inplace=True)
 
 # TODO guarantee that latest data always falls in a full week (e.g. reverse the day index)
 # drop last day per week (as this is what we're trying to predict)
-obs_df.drop(obs_df[obs_df['day_index'] == 6].index, inplace=True)
+obs_df.drop(obs_df[obs_df['col_index'] == days_per_row - 1].index, inplace=True)
 
 # pivot table such that rows are weeks and columns are telemetry per day
-obs_df = pd.pivot_table(obs_df, index=['week_index'], columns=[
-                        'day_index'], aggfunc='last')
+obs_df = pd.pivot_table(obs_df, index=['row_index'], columns=[
+                        'col_index'], aggfunc='last')
 obs_df['target'] = target_column
 
 # drop incomplete weeks (consider alternative solutions such as fillna)
@@ -68,7 +69,7 @@ obs_df = obs_df.dropna()
 # flatten columns
 obs_df.columns = [''.join([str(c) for c in c_list])
                   for c_list in obs_df.columns.values]
-obs_df = obs_df.reset_index().drop(['week_index'], axis=1)
+obs_df = obs_df.reset_index().drop(['row_index'], axis=1)
 
 X = obs_df.drop(['target'], axis=1)
 y = obs_df.target
@@ -80,7 +81,7 @@ dt_model = dt_model.fit(X, y)
 multi_reg_model = LinearRegression()
 multi_reg_model.fit(X, y)
 # Multivariate Polynomial Regression
-poly_model = PolynomialFeatures(degree=3)
+poly_model = PolynomialFeatures(degree=5)
 poly_X = poly_model.fit_transform(X)
 poly_model.fit(poly_X, y)
 regr_model = LinearRegression()
@@ -98,7 +99,7 @@ regr_model.fit(poly_X, y)
 #     y_pred = regr_model.predict(poly_X)
 #     print(i, mean_squared_error(y, y_pred, squared=False))
 
-k_fold = KFold(n_splits=10, shuffle=True)
+k_fold = KFold(n_splits=5, shuffle=True)
 
 
 def cv_models(models, cv):
