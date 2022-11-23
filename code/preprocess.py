@@ -28,39 +28,39 @@ for feature in features_le:
 # fill null values with 0
 obs_df = obs_df.fillna(0)
 
+# Column to predict
 target = 'Maximum temperature (°C)'
+# target = 'Evaporation (mm)'
+# target = '9am relative humidity (%)'
 # target = 'Rainfall (mm)'
 
-# --- Something Spicey ---
-# How many days data should an individual row contain?
-days_per_row = 2
-# create row index
-obs_df['row_index'] = (obs_df.index/days_per_row).astype(int)
-# store last value per row_index as target
-target_column = obs_df.groupby('row_index')[target].last()
-# create column index
-obs_df['col_index'] = obs_df.index % days_per_row
-# drop date
+# Days Per Row: How many days data should an individual row contain?
+dpr = 4
+# drop Date
 obs_df.drop('Date', axis=1, inplace=True)
+# save current columns for dropping later
+old_cols = obs_df.columns
+# trying to add columns directly results in performance warnings
+# appending to a list then concatenating works better
+new_cols = []
+# append previous days data as new columns
+for col in obs_df.columns:
+    for i in range(dpr):
+        # obs_df[col+str(i)] = obs_df[col].shift(dpr - i)
+        new_cols.append(pd.DataFrame(
+            data={col+str(i): obs_df[col].shift(dpr - i)}))
 
-# drop last day per row_index (as this is what we're trying to predict)
-obs_df.drop(obs_df[obs_df['col_index'] == days_per_row - 1].index, inplace=True)
+# add new columns & remove old ones by redefining dataframe
+obs_df = pd.concat(new_cols, axis=1)
+# redefine target
+target = target+str(dpr - 1)
+# clear first dpr rows due to incomplete data
+obs_df.dropna(inplace=True)
+# fix index (probably not necessary)
+obs_df.reset_index(drop=True, inplace=True)
 
-# pivot table such that rows are groups of days and columns are telemetry per day
-obs_df = pd.pivot_table(obs_df, index=['row_index'], columns=[
-                        'col_index'], aggfunc='last')
-obs_df['target'] = target_column
-
-# drop incomplete rows (consider alternative solutions such as fillna)
-obs_df = obs_df.dropna()
-
-# flatten columns
-obs_df.columns = [''.join([str(c) for c in c_list])
-                  for c_list in obs_df.columns.values]
-obs_df = obs_df.reset_index().drop(['row_index'], axis=1)
-
-X = obs_df.drop(['target'], axis=1)
-y = obs_df.target
+X = obs_df.drop([target], axis=1)
+y = obs_df[target]
 
 # Decision Tree
 dt_model = DecisionTreeRegressor()
@@ -69,13 +69,13 @@ dt_model = dt_model.fit(X, y)
 multi_reg_model = LinearRegression()
 multi_reg_model.fit(X, y)
 # Multivariate Polynomial Regression
-poly_model = PolynomialFeatures(degree=5)
+poly_model = PolynomialFeatures(degree=2)
 poly_X = poly_model.fit_transform(X)
 poly_model.fit(poly_X, y)
 regr_model = LinearRegression()
 regr_model.fit(poly_X, y)
 
-# # testing best degree for polynomial, results suggest 5
+# # testing best degree for polynomial, lowest mean squared error usually best
 # for i in range(1, 11):
 #     poly_model = PolynomialFeatures(degree=i)
 #     poly_X = poly_model.fit_transform(X)
@@ -87,7 +87,7 @@ regr_model.fit(poly_X, y)
 #     y_pred = regr_model.predict(poly_X)
 #     print(i, mean_squared_error(y, y_pred, squared=False))
 
-k_fold = KFold(n_splits=5, shuffle=True)
+k_fold = KFold(n_splits=10, shuffle=True)
 
 
 def cv_models(models, cv):
