@@ -3,10 +3,8 @@ import pandas as pd
 from io import StringIO
 from datetime import datetime
 
-bom_url = 'http://reg.bom.gov.au/climate/dwo/~/text/IDCJDW3049.~.csv'
-data_path = 'obs_df.csv'
 
-def get_data(n_months):
+def get_data(bom_url, n_months):
     obs_df = pd.DataFrame()
     today = datetime.today().strftime('%Y/%m')
     month_strs = pd.date_range(end=today, periods=n_months,
@@ -22,11 +20,14 @@ def get_data(n_months):
 
     return obs_df
 
-def save_data(n_months):
+
+def save_data(n_months, data_path):
     get_data(n_months).to_csv(data_path, index=False)
 
-def read_data():
+
+def read_data(data_path):
     return pd.read_csv(data_path)
 
-def update_data():
+
+def update_data(data_path):
     print('dooo sooomethiiing')

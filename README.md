@@ -16,5 +16,8 @@ Guarantee that latest data always falls in a full set (e.g. reverse the column i
 ## Updating Data
 Update existing CSV based on missing data rather than doing a complete download each time can rsync do this?
 
-## Separate Preprocessing & Modelling
+## Separate Preprocessing & Modelling - Done!
 Really should pull modelling out into a new python file to clean up a bit.
+
+## Reduce date cardinality
+Extract day, month & year of each date as a separate column, therefore creating less unique values and providing 3 new columns of (useful?) data.

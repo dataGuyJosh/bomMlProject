@@ -1,0 +1,6 @@
+{
+    "bom_url": "http://reg.bom.gov.au/climate/dwo/~/text/IDCJDW3049.~.csv",
+    "data_path": "obs_df.csv",
+    "days_per_row": 4,
+    "target":"Maximum temperature (°C)"
+}
