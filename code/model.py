@@ -25,15 +25,13 @@ def fit_models(X, y):
     return [dt_model, multi_reg_model, regr_model]
 
 
-def cross_validate_models(models, X, y):
-    k_fold = KFold(n_splits=10, shuffle=True)
+def cross_validate_models(models, splits, X, y):
+    k_fold = KFold(n_splits=splits, shuffle=True)
+    model_scores = []
     for model in models:
         scores = cross_val_score(model, X, y, cv=k_fold)
-        print(model,
-              '\nIndividual Scores:', scores,
-              '\nAverage Score:', scores.mean(),
-              '\nNumber of scores used in Average:', len(scores), '\n'
-              )
+        model_scores.append(scores.tolist())
+    return model_scores
 
 
 def test_polynomial(poly_deg, X, y):
