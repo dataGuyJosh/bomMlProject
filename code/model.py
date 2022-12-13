@@ -1,9 +1,17 @@
+from sklearn.ensemble import ExtraTreesRegressor
+
 from sklearn.preprocessing import PolynomialFeatures
 from sklearn.linear_model import LinearRegression
 from sklearn.tree import DecisionTreeRegressor
 
 from sklearn.model_selection import cross_val_score, KFold
 from sklearn.metrics import mean_squared_error
+
+
+def check_feature_importance(X, y):
+    etr_model = ExtraTreesRegressor()
+    etr_model.fit(X, y)
+    return etr_model.feature_importances_
 
 
 def fit_models(X, y):
