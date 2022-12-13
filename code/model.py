@@ -1,5 +1,7 @@
-from sklearn.ensemble import ExtraTreesRegressor
+import pandas as pd
+import matplotlib.pyplot as plt
 
+from sklearn.ensemble import ExtraTreesRegressor
 from sklearn.preprocessing import PolynomialFeatures
 from sklearn.linear_model import LinearRegression
 from sklearn.tree import DecisionTreeRegressor
@@ -11,13 +13,19 @@ from sklearn.metrics import mean_squared_error
 def check_feature_importance(X, y):
     etr_model = ExtraTreesRegressor()
     etr_model.fit(X, y)
-    return etr_model.feature_importances_
+    importance = pd.Series(etr_model.feature_importances_, index=X.columns)
+    importance.nlargest(10).plot(kind='barh')
+    plt.show()
 
 
 def fit_models(X, y):
     # Decision Tree
     dt_model = DecisionTreeRegressor()
     dt_model = dt_model.fit(X, y)
+
+    # Extra Trees
+    et_model = ExtraTreesRegressor()
+    et_model.fit(X, y)
 
     # Multiple (Linear) Regression
     multi_reg_model = LinearRegression()
@@ -30,7 +38,7 @@ def fit_models(X, y):
     regr_model = LinearRegression()
     regr_model.fit(poly_X, y)
 
-    return [dt_model, multi_reg_model, regr_model]
+    return [dt_model, et_model, multi_reg_model, regr_model]
 
 
 def cross_validate_models(models, splits, X, y):
@@ -38,7 +46,7 @@ def cross_validate_models(models, splits, X, y):
     model_scores = []
     for model in models:
         scores = cross_val_score(model, X, y, cv=k_fold)
-        model_scores.append(scores.tolist())
+        model_scores.append({model: scores.mean()})
     return model_scores
 
 
