@@ -1,10 +1,10 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 
-from sklearn.ensemble import ExtraTreesRegressor
-from sklearn.preprocessing import PolynomialFeatures
-from sklearn.linear_model import LinearRegression
 from sklearn.tree import DecisionTreeRegressor
+from sklearn.ensemble import ExtraTreesRegressor
+from sklearn.linear_model import LinearRegression
+from sklearn.preprocessing import PolynomialFeatures
 
 from sklearn.model_selection import cross_val_score, KFold
 from sklearn.metrics import mean_squared_error
@@ -36,6 +36,11 @@ def fit_mpr_model(X, y):
 
     return regr_model
 
+def predict_date(date, df, model):
+    # date expected in format YYYY-MM-DD
+    date = [eval(i) for i in date.split('-')]
+    print(df[(df.year == date[0]) & (df.month == date[1]) & (df.day == date[2])])
+    # return(model())
 
 def cross_validate_models(models, splits, X, y):
     k_fold = KFold(n_splits=splits, shuffle=True)

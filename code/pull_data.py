@@ -8,8 +8,8 @@ def get_data(bom_url, n_months):
     obs_df = pd.DataFrame()
     today = datetime.today().strftime('%Y/%m')
     month_strs = pd.date_range(end=today, periods=n_months,
-                               freq='M').strftime('%Y%m').tolist()
-
+                               freq='MS').strftime('%Y%m').tolist()
+                               
     # concatenate n months of data into dataframe
     for i in month_strs:
         i_bom_url = bom_url.replace('~', i)
