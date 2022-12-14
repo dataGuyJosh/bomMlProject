@@ -18,19 +18,15 @@ def check_feature_importance(X, y):
     plt.show()
 
 
-def fit_models(X, y):
-    # Decision Tree
-    dt_model = DecisionTreeRegressor()
-    dt_model = dt_model.fit(X, y)
+def fit_generic_models(models, X, y):
+    fit_models = []
+    for model in models:
+        model = eval(model+'()').fit(X, y)
+        fit_models.append(model)
+    return fit_models
 
-    # Extra Trees
-    et_model = ExtraTreesRegressor()
-    et_model.fit(X, y)
 
-    # Multiple (Linear) Regression
-    multi_reg_model = LinearRegression()
-    multi_reg_model.fit(X, y)
-
+def fit_mpr_model(X, y):
     # Multivariate Polynomial Regression
     poly_model = PolynomialFeatures(degree=2)
     poly_X = poly_model.fit_transform(X)
@@ -38,7 +34,7 @@ def fit_models(X, y):
     regr_model = LinearRegression()
     regr_model.fit(poly_X, y)
 
-    return [dt_model, et_model, multi_reg_model, regr_model]
+    return regr_model
 
 
 def cross_validate_models(models, splits, X, y):
