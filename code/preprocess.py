@@ -1,7 +1,5 @@
-import json
 import pandas as pd
 from sklearn import preprocessing
-from datetime import datetime
 
 
 def check_cardinality(df):
@@ -10,7 +8,12 @@ def check_cardinality(df):
         n_categories = len(df[feature].unique())
         print("Cardinality of {}: {}".format(feature, n_categories))
 
-def preprocess(target, obs_df):
+
+def preprocess(target, dpr, obs_df):
+    # target: feature to predict
+    # dpr: days per row i.e. how many days data should an individual row contain?
+    # obs_df: environmental observation dataframe
+
     # replace "Calm" with 0 and convert to int
     features_ws = ['9am wind speed (km/h)', '3pm wind speed (km/h)']
     obs_df[features_ws] = obs_df[features_ws].replace(['Calm'], 0).astype(int)
@@ -25,9 +28,6 @@ def preprocess(target, obs_df):
 
     # fill null values with 0
     obs_df = obs_df.fillna(0)
-
-    # How many days data should an individual row contain?
-    dpr = json.load(open('config.json'))['days_per_row']
 
     # store Date column for later use
     obs_Date = pd.to_datetime(obs_df.Date)

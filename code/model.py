@@ -36,14 +36,20 @@ def fit_mpr_model(X, y):
 
     return regr_model
 
+
 def predict_date(date, df, model):
     # date expected in format YYYY-MM-DD
-    date = [eval(i) for i in date.split('-')]
-    print(df[(df.year == date[0]) & (df.month == date[1]) & (df.day == date[2])])
-    # return(model())
+    date = [int(i) for i in date.split('-')]
+    input_variables = df[
+        (df.year == date[0]) &
+        (df.month == date[1]) &
+        (df.day == date[2])
+    ]
+    return model.predict(input_variables)
+
 
 def cross_validate_models(models, splits, X, y):
-    k_fold = KFold(n_splits=splits, shuffle=True)
+    k_fold = KFold(n_splits=splits, shuffle=False)
     model_scores = []
     for model in models:
         scores = cross_val_score(model, X, y, cv=k_fold)

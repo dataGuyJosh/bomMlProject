@@ -20,5 +20,11 @@ Update existing CSV based on missing data rather than doing a complete download 
 ## Separate Preprocessing & Modelling - Done!
 Really should pull modelling out into a new python file to clean up a bit.
 
-## Reduce date cardinality
+## Reduce date cardinality - Done!
 Extract day, month & year of each date as a separate column, therefore creating less unique values and providing 3 new columns of (useful?) data.
+
+## Create function to predict target given a date - Done!
+Given that we're only really asking for the date (as other variables are pulled from BoM) a user should be able to specify a date and have an estimated value returned.
+
+## Handling Null Values
+- figure out why most recent dates are being culled
