@@ -28,3 +28,4 @@ Given that we're only really asking for the date (as other variables are pulled 
 
 ## Handling Null Values
 - figure out why most recent dates are being culled
+- today's data omits some variables which (technically) cannot be finalised until the end of the day e.g. max temperature, sunshine hours etc...
