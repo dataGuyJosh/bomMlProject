@@ -6,8 +6,11 @@ from model import check_feature_importance, fit_generic_models, fit_mpr_model, c
 # read configuration variables
 config = json.load(open('config.json'))
 
-# pull 12 months data
-raw_obs_df = get_data(config['bom_url'], 15)
+# pull data from bom API
+raw_obs_df = get_data(config['bom_url'], config['data_month_range'])
+
+# drop last row due to null data (temporary)
+raw_obs_df.drop(raw_obs_df.tail(1).index, inplace=True)
 
 # check_nulls(raw_obs_df)
 # check_cardinality(raw_obs_df)
@@ -23,9 +26,9 @@ models = fit_generic_models(
 # models.append(fit_mpr_model(X, y))
 
 
-scores = cross_validate_models(models, 12, X, y)
+scores = cross_validate_models(models, 10, X, y)
 print(raw_obs_df, obs_df)
 print(
     scores,
-    predict_date('2022-12-15', X, models[1])
+    predict_date('2023-01-02', X, models[1])
 )
