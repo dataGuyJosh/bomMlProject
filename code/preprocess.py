@@ -4,14 +4,33 @@ from sklearn import preprocessing
 
 def check_cardinality(df):
     categorical_features = [col for col in df.columns if df[col].dtype == 'O']
+    unique_categories = {}
     for feature in categorical_features:
-        n_categories = len(df[feature].unique())
-        print("Cardinality of {}: {}".format(feature, n_categories))
+        unique_categories[feature] = len(df[feature].unique())
+        print("Cardinality of {}: {}".format(
+            feature, unique_categories[feature]))
+
+    return unique_categories
 
 
 def check_nulls(df):
     # categorical_features = [col for col in df.columns if df[col].dtype == 'O']
-    print(df.isnull().sum())
+    return df.isnull().sum()
+
+
+def categorical_feature_handler(df):
+    # replace "Calm" with 0 and convert to int
+    features_ws = ['9am wind speed (km/h)', '3pm wind speed (km/h)']
+    df[features_ws] = df[features_ws].replace(['Calm'], 0).astype(int)
+
+    # label encode categorical features (One Hot probably better here)
+    features_le = ['Direction of maximum wind gust ',
+                   '9am wind direction', '3pm wind direction']
+    le = preprocessing.LabelEncoder()
+    for feature in features_le:
+        le.fit(df[feature])
+        df[feature] = le.transform(df[feature])
+    return df
 
 
 def preprocess(target, dpr, obs_df):
@@ -19,20 +38,13 @@ def preprocess(target, dpr, obs_df):
     # dpr: days per row i.e. how many days data should an individual row contain?
     # obs_df: environmental observation dataframe
 
-    # replace "Calm" with 0 and convert to int
-    features_ws = ['9am wind speed (km/h)', '3pm wind speed (km/h)']
-    obs_df[features_ws] = obs_df[features_ws].replace(['Calm'], 0).astype(int)
+    # drop last row due to null data (temporary)
+    obs_df.drop(obs_df.tail(1).index, inplace=True)
 
-    # label encode categorical features (One Hot probably better here)
-    features_le = ['Direction of maximum wind gust ',
-                   '9am wind direction', '3pm wind direction']
-    le = preprocessing.LabelEncoder()
-    for feature in features_le:
-        le.fit(obs_df[feature])
-        obs_df[feature] = le.transform(obs_df[feature])
+    categorical_feature_handler(obs_df)
 
     # propagate last valid observation forward to next valid
-    obs_df = obs_df.fillna(method='ffill')
+    # obs_df = obs_df.fillna(method='ffill')
 
     # store Date column for later use
     obs_Date = pd.to_datetime(obs_df.Date)

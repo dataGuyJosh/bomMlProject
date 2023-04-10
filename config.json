@@ -1,7 +1,7 @@
 {
     "bom_url": "http://reg.bom.gov.au/climate/dwo/~/text/IDCJDW3049.~.csv",
     "data_path": "obs_df.csv",
-    "data_month_range": 15,
+    "data_month_range": 12,
     "days_per_row": 2,
-    "target":"Maximum temperature (°C)"
+    "target": "Maximum temperature (°C)"
 }
