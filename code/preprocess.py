@@ -14,7 +14,6 @@ def check_cardinality(df):
 
 
 def check_nulls(df):
-    # categorical_features = [col for col in df.columns if df[col].dtype == 'O']
     return df.isnull().sum()
 
 

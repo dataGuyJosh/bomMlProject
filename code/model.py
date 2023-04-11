@@ -14,7 +14,7 @@ def check_feature_importance(X, y):
     etr_model = ExtraTreesRegressor()
     etr_model.fit(X, y)
     importance = pd.Series(etr_model.feature_importances_, index=X.columns)
-    importance.nlargest(10).plot(kind='barh')
+    # importance.nlargest(10).plot(kind='barh')
     # plt.show()
     return importance
 
