@@ -10,12 +10,12 @@ Putting together a weather prediction model (ideally with FastAPI) using BoM Wea
 
 # Backlog
 ## TODO
+### Location Selection
+Store a list of BoM sensors to choose from, allowing users to predict weather conditions in locations other than Melbourne
+
 ### Handling Null Values
 - figure out why most recent dates are being culled
 - today's data omits some variables which (technically) cannot be finalised until the end of the day e.g. max temperature, sunshine hours etc...
-
-### Intialization
-Setup some init functions to create necessary components used throughout each file.
 
 
 ## Done
