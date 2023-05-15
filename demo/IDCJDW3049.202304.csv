@@ -1,0 +1,17 @@
+"Daily Weather Observations for Melbourne Airport, Victoria for April 2023"
+"Prepared at 05:36 UTC on Tuesday 11 April 2023   IDCJDW3049.202304"
+"Copyright 2003 Commonwealth Bureau of Meteorology"
+"Observations were drawn from Melbourne Airport {station 086282}"
+
+,"Date","Minimum temperature (°C)","Maximum temperature (°C)","Rainfall (mm)","Evaporation (mm)","Sunshine (hours)","Direction of maximum wind gust ","Speed of maximum wind gust (km/h)","Time of maximum wind gust","9am Temperature (°C)","9am relative humidity (%)","9am cloud amount (oktas)","9am wind direction","9am wind speed (km/h)","9am MSL pressure (hPa)","3pm Temperature (°C)","3pm relative humidity (%)","3pm cloud amount (oktas)","3pm wind direction","3pm wind speed (km/h)","3pm MSL pressure (hPa)"
+,2023-04-1,8.6,15.9,2.6,2.4,2.4,S,43,11:20,10.3,85,7,SSW,11,1019.5,14.1,64,7,SE,19,1019.9
+,2023-04-2,6.9,19.4,0.4,2.0,10.2,S,28,16:12,13.5,77,2,SSW,2,1021.9,17.7,50,3,SSW,13,1019.2
+,2023-04-3,7.4,25.8,0,3.4,8.8,NNE,43,14:11,13.9,77,1,NE,4,1020.3,23.3,45,6,NNW,20,1016.4
+,2023-04-4,9.1,27.9,0,5.0,10.1,N,43,09:27,20.2,60,1,NNE,24,1019.1,22.2,62,6,S,24,1016.2
+,2023-04-5,12.7,18.6,0,4.0,0.2,SSE,26,14:57,16.2,75,7,E,9,1018.8,17.8,66,7,SSE,15,1016.4
+,2023-04-6,11.2,24.6,0,1.2,2.8,NNE,56,10:15,17.5,72,7,NE,9,1012.1,22.5,49,7,N,31,1007.4
+,2023-04-7,14.2,18.8,5.4,5.2,0.2,NNE,50,10:25,17.1,83,7,N,20,999.4,16.9,68,7,NNW,17,997.4
+,2023-04-8,12.6,17.1,3.2,1.4,2.1,WSW,59,15:16,12.7,95,7,WSW,17,1006.6,16.2,66,7,SW,30,1005.4
+,2023-04-9,9.6,15.2,0.6,3.8,0.6,SW,59,10:13,10.5,88,7,WSW,26,1012.8,14.0,57,7,SSW,33,1012.9
+,2023-04-10,8.9,15.5,0.4,2.6,0.7,SSW,39,11:03,10.3,93,7,SW,22,1014.8,14.5,63,7,SSW,22,1013.4
+,2023-04-11,10.3,,0.8,1.4,,,,,13.2,83,7,SW,9,1015.9,18.9,55,7,E,9,1011.2
