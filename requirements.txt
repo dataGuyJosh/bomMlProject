@@ -7,4 +7,5 @@ pandasql
 requests
 scikit-learn
 scipy
+seaborn
 uvicorn[standard]
