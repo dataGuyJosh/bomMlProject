@@ -6,7 +6,7 @@ from datetime import datetime
 
 def get_data(n_months):
     bom_url = 'http://reg.bom.gov.au/climate/dwo/~/text/IDCJDW3049.~.csv'
-    obs_df = pd.DataFrame()
+    df = pd.DataFrame()
     today = datetime.today().strftime('%Y/%m')
     month_strs = pd.date_range(end=today, periods=n_months,
                                freq='MS').strftime('%Y%m').tolist()
@@ -17,9 +17,9 @@ def get_data(n_months):
         response = requests.get(i_bom_url).text
         month_df = pd.read_csv(
             StringIO(response), skiprows=5).iloc[:, 1:]
-        obs_df = pd.concat([obs_df, month_df], ignore_index=True)
+        df = pd.concat([df, month_df], ignore_index=True)
 
-    return obs_df
+    return df
 
 
 def save_data(n_months, data_path):
@@ -30,5 +30,5 @@ def read_data(data_path):
     return pd.read_csv(data_path)
 
 
-def update_data(data_path):
-    print('dooo sooomethiiing')
+# def update_data(n_months, data_path):
+#     print('dooo sooomethiiing')
