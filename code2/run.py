@@ -19,16 +19,10 @@ from pull_data import save_data, read_data
 bom = read_data('data/raw_data.csv')
 
 # Preprocessing
-# Convert Date column to data frame index
-bom.index = pd.to_datetime(bom['Date'], format='%Y-%m-%d')
-del bom['Date']
-
 ws_cols = ['9am wind speed (km/h)', '3pm wind speed (km/h)']
 bom[ws_cols] = bom[ws_cols].replace(['Calm'], 0).astype(float)
 
-# print(bom.info())
-
-bom = pd.get_dummies(bom)
+# bom = pd.get_dummies(bom)
 
 # split data into train & test sets
 bom_trn, bom_tst = np.split(bom, [int(0.90*len(bom))])
