@@ -27,7 +27,7 @@ def save_data(n_months, data_path):
 
 
 def read_data(data_path):
-    return pd.read_csv(data_path)
+    return pd.read_csv(data_path, index_col = 'Date', parse_dates = True).asfreq('D')
 
 
 # def update_data(n_months, data_path):
