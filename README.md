@@ -3,7 +3,7 @@ Putting together a weather prediction model (ideally with FastAPI) using BoM Wea
 
 # URLs
 - https://builtin.com/data-science/time-series-forecasting-python
-- https://www.analyticsvidhya.com/blog/2021/06/predictive-modelling-rain-prediction-in-australia-with-python/
+- https://www.analyticsvidhya.com/blog/2021/06/predictive-modelling-rain-prediction-in-australia-with-python/ --> the dataset used here only predicts "tomorrow" i.e. requires data for the day before
 
 
 # Backlog
