@@ -39,8 +39,7 @@ def update_data(n_months, read_path, write_path=None):
 
     # concat dataframes i.e. old above new
     # drop duplicate rows based on Date (new rows overwrite old rows)
-    # make Date the index & write to CSV
+    # write to CSV using Date as the index
     pd.concat([old, new]) \
         .drop_duplicates(subset='Date', keep='last') \
-        .set_index('Date') \
-        .to_csv(write_path)
+        .to_csv(write_path, index=False)
