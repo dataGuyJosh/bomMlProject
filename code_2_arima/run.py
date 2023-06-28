@@ -10,14 +10,13 @@ import matplotlib.pyplot as plt
 from statsmodels.tsa.arima.model import ARIMA
 
 # custom
-from pull_data import save_data, read_data
+from pull_data import read_data, update_data
 
-# save_data(15,'data/raw_data.csv')
-
+update_data(12, 'data/raw_data.csv')
 bom = read_data('data/raw_data.csv')
 
 target_col = 'Maximum temperature (°C)'
-target_col = 'Evaporation (mm)'
+# target_col = 'Evaporation (mm)'
 
 # Preprocessing
 ws_cols = ['9am wind speed (km/h)', '3pm wind speed (km/h)']
