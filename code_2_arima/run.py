@@ -35,7 +35,7 @@ model = ARIMA(trn[target_col], order=(range(1, 40), 1, range(1, 40)))
 
 model = model.fit()
 
-prd = model.get_forecast(len(tst.index)*4)
+prd = model.get_forecast(len(tst.index)*3)
 prd_df = prd.conf_int(alpha=0.05)
 prd_df["Predictions"] = model.predict(
     start=prd_df.index[0], end=prd_df.index[-1])
