@@ -6,7 +6,7 @@ from statsmodels.tsa.arima.model import ARIMA
 
 # API
 import uvicorn
-from fastapi import FastAPI, HTTPException, Query
+from fastapi import FastAPI, HTTPException
 from starlette import status
 
 app = FastAPI()
@@ -24,12 +24,18 @@ bom[ws_cols] = bom[ws_cols].replace(['Calm'], 0).astype(float)
 def check_models_trained():
     if not 'model' in globals():
         raise HTTPException(
-            status_code=400, detail='Please train model first')
+            status_code=400, detail='Please train a model first')
+
+
+@app.get('/list_features/')
+def get_columns():
+    return bom.select_dtypes(include=['int', 'float']).columns.values.tolist()
 
 
 @app.post('/train_arima/', status_code=status.HTTP_204_NO_CONTENT)
-def train_arima(target: str = Query(..., description="What feature should be predicted? e.g. Maximum temperature (°C) or Evaporation (mm)")):
+def train_arima(target: str = 'Maximum temperature (°C)'):
     global model
+
     # Autoregressive Integrated Moving Average (ARIMA)
     model = ARIMA(bom[target], order=(range(1, 40), 1, range(1, 40)))
 
@@ -40,7 +46,7 @@ def train_arima(target: str = Query(..., description="What feature should be pre
 
 
 @app.get('/forecast/')
-def forecast(request):
+def forecast(request=7, predict_range: bool = True):
     check_models_trained()
     if request.isdigit():
         request = int(request)
@@ -48,8 +54,8 @@ def forecast(request):
     prd = model.get_forecast(request)
     prd_df = prd.conf_int(alpha=0.05)
 
-    return model.predict(
-        start=prd_df.index[0], end=prd_df.index[-1])
+    predictions = model.predict(start=prd_df.index[0], end=prd_df.index[-1])
+    return predictions if predict_range else predictions[-1]
 
 
 if __name__ == "__main__":
