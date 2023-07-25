@@ -1,0 +1,728 @@
+region,station_name,station_id
+act,Canberra,IDCJDW2801
+act,Mount Ginini,IDCJDW2804
+act,Tuggeranong,IDCJDW2802
+nsw,Albion Park,IDCJDW2001
+nsw,Albury-Wodonga,IDCJDW2002
+nsw,Armidale,IDCJDW2004
+nsw,Armidale Airport,IDCJDW2165
+nsw,Badgerys Creek,IDCJDW2005
+nsw,Ballina,IDCJDW2006
+nsw,Balranald,IDCJDW2007
+nsw,Bankstown,IDCJDW2008
+nsw,Barraba,IDCJDW2010
+nsw,Batemans Bay,IDCJDW2011
+nsw,Bathurst,IDCJDW2012
+nsw,Bathurst Airport,IDCJDW2166
+nsw,Bega,IDCJDW2013
+nsw,Bellambi,IDCJDW2014
+nsw,Bombala,IDCJDW2015
+nsw,Bombala (Therry Street),IDCJDW2167
+nsw,Borrona Downs,IDCJDW2195
+nsw,Bourke,IDCJDW2016
+nsw,Braidwood,IDCJDW2018
+nsw,Brewarrina,IDCJDW2019
+nsw,Brewon,IDCJDW2009
+nsw,Broken Hill Airport,IDCJDW2168
+nsw,Burrinjuck Dam,IDCJDW2021
+nsw,Byron Bay,IDCJDW2022
+nsw,Cabramurra,IDCJDW2023
+nsw,Camden,IDCJDW2024
+nsw,Campbelltown,IDCJDW2157
+nsw,Canterbury,IDCJDW2025
+nsw,Casino,IDCJDW2026
+nsw,Cessnock,IDCJDW2027
+nsw,Cobar,IDCJDW2029
+nsw,Cobar Airport,IDCJDW2169
+nsw,Coffs Harbour,IDCJDW2030
+nsw,Collarenebri,IDCJDW2031
+nsw,Condoblin Agricultural Research Station,IDCJDW2170
+nsw,Condobolin,IDCJDW2032
+nsw,Cooma,IDCJDW2033
+nsw,Cooma Airport,IDCJDW2171
+nsw,Coonabarabran,IDCJDW2034
+nsw,Coonabarabran Airport,IDCJDW2172
+nsw,Coonamble,IDCJDW2035
+nsw,Cootamundra,IDCJDW2036
+nsw,Corowa,IDCJDW2037
+nsw,Cowra,IDCJDW2038
+nsw,Delta,IDCJDW2186
+nsw,Deniliquin,IDCJDW2039
+nsw,Dorrigo,IDCJDW2040
+nsw,Dubbo,IDCJDW2041
+nsw,Dunedoo,IDCJDW2042
+nsw,Evans Head,IDCJDW2043
+nsw,Forbes,IDCJDW2045
+nsw,Forster,IDCJDW2046
+nsw,Fowlers Gap,IDCJDW2155
+nsw,Girilambone,IDCJDW2020
+nsw,Glen Innes,IDCJDW2047
+nsw,Glen Innes Airport,IDCJDW2173
+nsw,Gosford,IDCJDW2048
+nsw,Goulburn,IDCJDW2049
+nsw,Goulburn Tafe,IDCJDW2174
+nsw,Grafton,IDCJDW2050
+nsw,Grafton Research Station,IDCJDW2194
+nsw,Green Cape,IDCJDW2051
+nsw,Grenfell,IDCJDW2052
+nsw,Griffith,IDCJDW2053
+nsw,Gulgong,IDCJDW2054
+nsw,Gundagai,IDCJDW2055
+nsw,Gunnedah,IDCJDW2056
+nsw,Gunnedah Resource Centre,IDCJDW2175
+nsw,Guyra,IDCJDW2057
+nsw,Hay,IDCJDW2058
+nsw,High Range,IDCJDW2164
+nsw,Hillston,IDCJDW2059
+nsw,Holsworthy (Defence),IDCJDW2188
+nsw,Holsworthy Aerodrome,IDCJDW2161
+nsw,Horsley Park,IDCJDW2062
+nsw,Hume Reservoir,IDCJDW2063
+nsw,Inverell,IDCJDW2064
+nsw,Inverell (Raglan Street),IDCJDW2176
+nsw,Ivanhoe,IDCJDW2065
+nsw,Jervis Bay,IDCJDW2067
+nsw,Jervis Bay Airfield,IDCJDW2187
+nsw,Kapooka,IDCJDW2180
+nsw,Katoomba,IDCJDW2068
+nsw,Kempsey,IDCJDW2069
+nsw,Khancoban,IDCJDW2070
+nsw,Kiama,IDCJDW2160
+nsw,Kurnell [Wind Only],IDCJDW2191
+nsw,Lake Cargelligo,IDCJDW2071
+nsw,Lake Macquarie,IDCJDW2159
+nsw,Lake Victoria,IDCJDW2072
+nsw,Lightning Ridge,IDCJDW2073
+nsw,Lismore,IDCJDW2074
+nsw,Lithgow,IDCJDW2075
+nsw,Little Bay [Wind Only],IDCJDW2193
+nsw,Lord Howe Island,IDCJDW2077
+nsw,Lord Howe Island (Windy Point) [Wind Only],IDCJDW2190
+nsw,Lostock,IDCJDW2078
+nsw,Maitland,IDCJDW2079
+nsw,Mangrove Mountain,IDCJDW2080
+nsw,Marrangaroo,IDCJDW2110
+nsw,Menindee,IDCJDW2081
+nsw,Merimbula,IDCJDW2082
+nsw,Merriwa,IDCJDW2158
+nsw,Montague Island,IDCJDW2083
+nsw,Moree,IDCJDW2084
+nsw,Moruya,IDCJDW2085
+nsw,Moruya Airport,IDCJDW2177
+nsw,Moss Vale,IDCJDW2086
+nsw,Mount Boyce,IDCJDW2087
+nsw,Mount Ginini,IDCJDW2804
+nsw,Mount Hope,IDCJDW2181
+nsw,Mount Seaview,IDCJDW2151
+nsw,Mudgee,IDCJDW2088
+nsw,Mulurulu,IDCJDW2185
+nsw,Mungindi,IDCJDW2089
+nsw,Murrurundi,IDCJDW2196
+nsw,Murrurundi Gap,IDCJDW2162
+nsw,Murwillumbah,IDCJDW2091
+nsw,Narooma,IDCJDW2092
+nsw,Narrabri,IDCJDW2093
+nsw,Narrandera,IDCJDW2094
+nsw,Nelson Bay,IDCJDW2095
+nsw,Nerriga,IDCJDW2096
+nsw,Newcastle,IDCJDW2097
+nsw,Newcastle University,IDCJDW2098
+nsw,Noona,IDCJDW2183
+nsw,Norah Head,IDCJDW2099
+nsw,Norfolk Island,IDCJDW2100
+nsw,North Head [Wind Only],IDCJDW2192
+nsw,Nowra,IDCJDW2101
+nsw,Nullo Mountain,IDCJDW2102
+nsw,Nyngan,IDCJDW2103
+nsw,Oberon,IDCJDW2104
+nsw,Orange,IDCJDW2105
+nsw,Orange Agricultural Institute,IDCJDW2178
+nsw,Parkes,IDCJDW2106
+nsw,Parramatta,IDCJDW2107
+nsw,Paterson,IDCJDW2108
+nsw,Peak Hill,IDCJDW2109
+nsw,Penrith,IDCJDW2111
+nsw,Perisher Valley,IDCJDW2112
+nsw,Pindari,IDCJDW2113
+nsw,Pooncarie,IDCJDW2114
+nsw,Port Macquarie,IDCJDW2197
+nsw,Port Macquarie Airport (Comparison),IDCJDW2115
+nsw,Prospect Dam,IDCJDW2116
+nsw,Quandialla,IDCJDW2117
+nsw,Quirindi,IDCJDW2118
+nsw,Richmond,IDCJDW2119
+nsw,Scone,IDCJDW2121
+nsw,Scone Soil Conservation Service,IDCJDW2179
+nsw,Singleton,IDCJDW2122
+nsw,Singleton (Defence),IDCJDW2003
+nsw,Smithville,IDCJDW2184
+nsw,South West Rocks,IDCJDW2123
+nsw,Springwood,IDCJDW2156
+nsw,Sydney,IDCJDW2124
+nsw,Sydney Airport,IDCJDW2125
+nsw,Sydney Harbour,IDCJDW2163
+nsw,Sydney Olympic Park,IDCJDW2061
+nsw,Tabulam,IDCJDW2126
+nsw,Tamworth,IDCJDW2127
+nsw,Taralga,IDCJDW2128
+nsw,Taree,IDCJDW2129
+nsw,Temora,IDCJDW2130
+nsw,Tenterfield,IDCJDW2131
+nsw,Terrey Hills,IDCJDW2154
+nsw,Thredbo Top Station,IDCJDW2132
+nsw,Thredbo Village,IDCJDW2133
+nsw,Tibooburra,IDCJDW2134
+nsw,Tocumwal,IDCJDW2135
+nsw,Trangie,IDCJDW2136
+nsw,Tumbarumba,IDCJDW2137
+nsw,Ulladulla,IDCJDW2138
+vic,Aireys Inlet,IDCJDW3001
+vic,Albury-Wodonga,IDCJDW2002
+vic,Ararat,IDCJDW3002
+vic,Avalon,IDCJDW3003
+vic,Bairnsdale,IDCJDW3004
+vic,Ballarat,IDCJDW3005
+vic,Ben Nevis,IDCJDW3045
+vic,Benalla,IDCJDW3007
+vic,Bendigo,IDCJDW3008
+vic,Bundoora,IDCJDW3009
+vic,Cape Nelson,IDCJDW3010
+vic,Cape Otway,IDCJDW3011
+vic,Casterton,IDCJDW3012
+vic,Castlemaine,IDCJDW3013
+vic,Cerberus,IDCJDW3014
+vic,Charlton,IDCJDW3092
+vic,Colac (Mt Gellibrand),IDCJDW3015
+vic,Coldstream,IDCJDW3016
+vic,Combienbar,IDCJDW3017
+vic,Corryong,IDCJDW3018
+vic,Cranbourne,IDCJDW3019
+vic,Dartmoor,IDCJDW3101
+vic,Dartmouth,IDCJDW3020
+vic,East Sale Airport,IDCJDW3021
+vic,Echuca,IDCJDW3023
+vic,Edenhope,IDCJDW3096
+vic,Edi Upper,IDCJDW3024
+vic,Essendon,IDCJDW3026
+vic,Falls Creek,IDCJDW3027
+vic,Fawkner Beacon [Wind Only],IDCJDW3108
+vic,Ferny Creek,IDCJDW3102
+vic,Frankston (Ballam Park),IDCJDW3112
+vic,Frankston Beach,IDCJDW3028
+vic,Gabo Island,IDCJDW3029
+vic,Geelong,IDCJDW3030
+vic,Gelantipy,IDCJDW3031
+vic,Haines Saddle,IDCJDW3025
+vic,Hamilton,IDCJDW3032
+vic,Hogan Island,IDCJDW3088
+vic,Hopetoun,IDCJDW3090
+vic,Horsham,IDCJDW3035
+vic,Hunters Hill,IDCJDW3036
+vic,Kanagulk,IDCJDW3091
+vic,Kerang,IDCJDW3037
+vic,Kilmore Gap,IDCJDW3038
+vic,Kyabram,IDCJDW3039
+vic,Lake Eildon,IDCJDW3040
+vic,Lakes Entrance,IDCJDW3041
+vic,Latrobe Valley,IDCJDW3042
+vic,Laverton,IDCJDW3043
+vic,Longerenong,IDCJDW3044
+vic,Mallacoota,IDCJDW3046
+vic,Mangalore,IDCJDW3047
+vic,Maryborough,IDCJDW3048
+vic,Melbourne,IDCJDW3050
+vic,Melbourne (Olympic Park),IDCJDW3033
+vic,Melbourne Airport,IDCJDW3049
+vic,Mildura,IDCJDW3051
+vic,Moorabbin,IDCJDW3052
+vic,Mortlake,IDCJDW3053
+vic,Mount Baw Baw,IDCJDW3095
+vic,Mount Buller,IDCJDW3054
+vic,Mount Hotham,IDCJDW3055
+vic,Mount Hotham Airport,IDCJDW3056
+vic,Mount Moornapa,IDCJDW3057
+vic,Mount Nowa Nowa,IDCJDW3058
+vic,Mount William (Grampians),IDCJDW3097
+vic,Nhill,IDCJDW3059
+vic,Nilma North,IDCJDW3104
+vic,Omeo,IDCJDW3061
+vic,Orbost,IDCJDW3062
+vic,Ouyen,IDCJDW3063
+vic,Point Hicks,IDCJDW3065
+vic,Point Wilson [Wind Only],IDCJDW3107
+vic,Port Fairy,IDCJDW3067
+vic,Portland,IDCJDW3068
+vic,Pound Creek,IDCJDW3099
+vic,Puckapunyal (Lyon Hill),IDCJDW3111
+vic,Puckapunyal West,IDCJDW3110
+vic,Redesdale,IDCJDW3069
+vic,Rhyll,IDCJDW3070
+vic,Rutherglen,IDCJDW3071
+vic,Sale,IDCJDW3022
+vic,Scoresby,IDCJDW3072
+vic,Sheoaks,IDCJDW3073
+vic,Shepparton,IDCJDW3074
+vic,South Channel Island [Wind Only],IDCJDW3109
+vic,St Kilda Harbour [Wind Only],IDCJDW3106
+vic,Stawell,IDCJDW3075
+vic,Strathbogie,IDCJDW3076
+vic,Swan Hill,IDCJDW3077
+vic,Tatura,IDCJDW3078
+vic,Viewbank,IDCJDW3093
+qld,Alva Beach,IDCJDW4001
+qld,Amberley,IDCJDW4002
+qld,Applethorpe,IDCJDW4140
+qld,Archerfield,IDCJDW4003
+qld,Arlington Reef,IDCJDW4052
+qld,Ayr,IDCJDW4005
+qld,Ballera,IDCJDW4006
+qld,Banana Bank [Wind Only],IDCJDW4161
+qld,Barcaldine,IDCJDW4008
+qld,Beaudesert,IDCJDW4141
+qld,Bedourie,IDCJDW4009
+qld,Beerburrum,IDCJDW4010
+qld,Birdsville,IDCJDW4011
+qld,Blackall,IDCJDW4012
+qld,Blackwater,IDCJDW4013
+qld,Bollon,IDCJDW4014
+qld,Boulia,IDCJDW4015
+qld,Bowen,IDCJDW4016
+qld,Brisbane,IDCJDW4019
+qld,Brisbane Airport,IDCJDW4020
+qld,Bundaberg,IDCJDW4021
+qld,Burketown Airport,IDCJDW4022
+qld,Cairns,IDCJDW4024
+qld,Cairns Racecourse,IDCJDW4154
+qld,Camooweal,IDCJDW4025
+qld,Canungra (Defence),IDCJDW4158
+qld,Cape Flattery,IDCJDW4142
+qld,Cape Moreton,IDCJDW4026
+qld,Cardwell,IDCJDW4027
+qld,Carters Bore,IDCJDW4151
+qld,Century Mine,IDCJDW4143
+qld,Charleville,IDCJDW4028
+qld,Charters Towers,IDCJDW4029
+qld,Clermont Airport,IDCJDW4147
+qld,Cloncurry,IDCJDW4031
+qld,Coconut Island,IDCJDW4032
+qld,Coen,IDCJDW4033
+qld,Collinsville,IDCJDW4034
+qld,Cooktown,IDCJDW4035
+qld,Coolangatta,IDCJDW4036
+qld,Cowley Beach,IDCJDW4004
+qld,Cunnamulla,IDCJDW4038
+qld,Dalby,IDCJDW4039
+qld,Double Island Point,IDCJDW4041
+qld,Emerald,IDCJDW4042
+qld,Flinders Reef,IDCJDW4043
+qld,Frederick Reef,IDCJDW4164
+qld,Gatton,IDCJDW4044
+qld,Gayndah Airport,IDCJDW4045
+qld,Georgetown,IDCJDW4047
+qld,Gladstone,IDCJDW4049
+qld,Gladstone Airport,IDCJDW4048
+qld,Gold Coast,IDCJDW4050
+qld,Greenbank (Defence),IDCJDW4156
+qld,Gympie,IDCJDW4053
+qld,Hamilton Island,IDCJDW4054
+qld,Heron Island,IDCJDW4055
+qld,Hervey Bay,IDCJDW4056
+qld,Holmes Reef,IDCJDW4058
+qld,Horn Island,IDCJDW4059
+qld,Hughenden,IDCJDW4060
+qld,Ingham,IDCJDW4061
+qld,Injune,IDCJDW4063
+qld,Inner Beacon [Wind Only],IDCJDW4163
+qld,Innisfail,IDCJDW4064
+qld,Innisfail Aerodrome,IDCJDW4160
+qld,Isisford,IDCJDW4065
+qld,Julia Creek,IDCJDW4067
+qld,Kingaroy,IDCJDW4069
+qld,Kowanyama,IDCJDW4070
+qld,Lady Elliot Island,IDCJDW4071
+qld,Lake Julius,IDCJDW4150
+qld,Lihou Reef,IDCJDW4153
+qld,Lochington,IDCJDW4148
+qld,Lockhart River,IDCJDW4072
+qld,Logan City,IDCJDW4073
+qld,Longreach,IDCJDW4074
+qld,Low Isles,IDCJDW4075
+qld,Lucinda Point,IDCJDW4076
+qld,Mackay,IDCJDW4078
+qld,Mackay Airport,IDCJDW4077
+qld,Mackay Racecourse,IDCJDW4159
+qld,Mareeba,IDCJDW4080
+qld,Maryborough,IDCJDW4082
+qld,Middle Percy Island,IDCJDW4145
+qld,Miles,IDCJDW4083
+qld,Mitchell,IDCJDW4085
+qld,Monto,IDCJDW4086
+qld,Moranbah,IDCJDW4087
+qld,Mornington Island,IDCJDW4088
+qld,Mount Isa,IDCJDW4089
+qld,Mount Stuart,IDCJDW4017
+qld,Nambour,IDCJDW4091
+qld,New May Downs,IDCJDW4152
+qld,Normanton,IDCJDW4092
+qld,Oakey,IDCJDW4093
+qld,Palmerville,IDCJDW4094
+qld,Point Lookout,IDCJDW4095
+qld,Proserpine,IDCJDW4096
+qld,Rainbow Beach,IDCJDW4098
+qld,Redcliffe,IDCJDW4099
+qld,Redland,IDCJDW4155
+qld,Richmond,IDCJDW4101
+qld,Richmond Airport,IDCJDW4100
+qld,Rockhampton,IDCJDW4102
+qld,Rolleston,IDCJDW4103
+qld,Roma,IDCJDW4104
+qld,Rundle Island,IDCJDW4105
+qld,Samuel Hill,IDCJDW4106
+qld,Sandy Cape,IDCJDW4107
+qld,Scherger RAAF Base,IDCJDW4149
+qld,Seventeen Seventy,IDCJDW4127
+qld,South Johnstone,IDCJDW4108
+qld,Spitfire Channel [Wind Only],IDCJDW4162
+qld,Springsure,IDCJDW4109
+qld,St George,IDCJDW4110
+qld,St Lawrence,IDCJDW4111
+qld,Stanthorpe,IDCJDW4112
+qld,Sunshine Coast Airport,IDCJDW4081
+qld,Surat,IDCJDW4113
+qld,Sweers Island,IDCJDW4114
+qld,Tambo,IDCJDW4115
+qld,Taroom,IDCJDW4116
+qld,Tewantin,IDCJDW4118
+qld,Texas,IDCJDW4119
+qld,Thangool,IDCJDW4120
+qld,Thargomindah Airport,IDCJDW4121
+qld,The Monument,IDCJDW4123
+qld,Tin Can Bay (Defence),IDCJDW4157
+qld,Toowoomba,IDCJDW4126
+qld,Townsville,IDCJDW4128
+qld,Townsville (Air Weapons Range),IDCJDW4007
+qld,Townsville (Fanning River),IDCJDW4018
+qld,Trepell,IDCJDW4129
+qld,Urandangi,IDCJDW4130
+sa,Adelaide (Kent Town),IDCJDW5002
+sa,Adelaide (West Terrace / Ngayirdapira),IDCJDW5081
+sa,Adelaide Airport,IDCJDW5001
+sa,Andamooka,IDCJDW5003
+sa,Arkaroola,IDCJDW5004
+sa,Cape Borda,IDCJDW5005
+sa,Cape Jaffa,IDCJDW5006
+sa,Cape Willoughby,IDCJDW5008
+sa,Ceduna,IDCJDW5009
+sa,Clare,IDCJDW5010
+sa,Cleve,IDCJDW5079
+sa,Cleve Aerodrome,IDCJDW5011
+sa,Coober Pedy,IDCJDW5012
+sa,Coonawarra,IDCJDW5013
+sa,Cultana,IDCJDW5083
+sa,Cummins,IDCJDW5077
+sa,Edinburgh,IDCJDW5015
+sa,Edithburgh,IDCJDW5016
+sa,Elliston,IDCJDW5017
+sa,Eudunda,IDCJDW5018
+sa,Gluepot,IDCJDW5019
+sa,Hawker,IDCJDW5020
+sa,Hindmarsh Island,IDCJDW5021
+sa,Kadina,IDCJDW5022
+sa,Karoonda,IDCJDW5023
+sa,Keith,IDCJDW5024
+sa,Keith (Munkora),IDCJDW5080
+sa,Kimba,IDCJDW5025
+sa,Kingscote,IDCJDW5026
+sa,Kuitpo,IDCJDW5027
+sa,Kyancutta,IDCJDW5028
+sa,Lameroo,IDCJDW5029
+sa,Leigh Creek,IDCJDW5030
+sa,Loxton,IDCJDW5031
+sa,Maitland,IDCJDW5032
+sa,Marla,IDCJDW5033
+sa,Marree,IDCJDW5034
+sa,Meningie,IDCJDW5035
+sa,Minlaton,IDCJDW5036
+sa,Minnipa,IDCJDW5037
+sa,Moomba,IDCJDW5038
+sa,Mount Barker,IDCJDW5039
+sa,Mount Crawford,IDCJDW5040
+sa,Mount Gambier,IDCJDW5041
+sa,Mount Ive,IDCJDW5042
+sa,Mount Lofty,IDCJDW5076
+sa,Murray Bridge,IDCJDW5043
+sa,Naracoorte,IDCJDW5044
+sa,Neptune Island,IDCJDW5045
+sa,Noarlunga,IDCJDW5046
+sa,Nullarbor,IDCJDW5048
+sa,Nuriootpa,IDCJDW5049
+sa,Oodnadatta,IDCJDW5050
+sa,Outer Harbour (Black Pole) [Wind Only],IDCJDW5091
+sa,Padthaway,IDCJDW5051
+sa,Pallamana,IDCJDW5007
+sa,Parafield,IDCJDW5052
+sa,Parawa,IDCJDW5053
+sa,Parndana,IDCJDW5078
+sa,Point Avoid,IDCJDW5082
+sa,Port Augusta,IDCJDW5054
+sa,Port Lincoln,IDCJDW5055
+sa,Port Pirie,IDCJDW5056
+sa,Price,IDCJDW5057
+sa,Pukatja / Ernabella,IDCJDW5058
+sa,Renmark,IDCJDW5059
+sa,Robe,IDCJDW5060
+sa,Robe Airfield,IDCJDW5047
+sa,Rosedale,IDCJDW5061
+sa,Roseworthy,IDCJDW5062
+sa,Roxby Downs,IDCJDW5063
+sa,Sellicks Hill [Wind Only],IDCJDW5092
+sa,Snowtown,IDCJDW5064
+sa,Stenhouse Bay,IDCJDW5065
+sa,Strathalbyn,IDCJDW5066
+sa,Streaky Bay,IDCJDW5067
+sa,Tarcoola,IDCJDW5068
+sa,Victor Harbor,IDCJDW5069
+wa,Abrolhos,IDCJDW6137
+wa,Adele Island,IDCJDW6159
+wa,Albany,IDCJDW6001
+wa,Albany Airport,IDCJDW6002
+wa,Argyle,IDCJDW6003
+wa,Badgingarra,IDCJDW6004
+wa,Balladonia,IDCJDW6007
+wa,Barimunya,IDCJDW6152
+wa,Barrow Island,IDCJDW6008
+wa,Bedout Island,IDCJDW6145
+wa,Bencubbin,IDCJDW6009
+wa,Beverley,IDCJDW6010
+wa,Bickley,IDCJDW6011
+wa,Bidyadanga,IDCJDW6012
+wa,Bridgetown,IDCJDW6013
+wa,Brookton,IDCJDW6014
+wa,Broome,IDCJDW6015
+wa,Browse Island,IDCJDW6160
+wa,Bulga Downs,IDCJDW6016
+wa,Bunbury,IDCJDW6017
+wa,Busselton Airport,IDCJDW6019
+wa,Busselton Jetty,IDCJDW6163
+wa,Cape Leeuwin,IDCJDW6021
+wa,Cape Naturaliste,IDCJDW6022
+wa,Carnamah,IDCJDW6023
+wa,Carnarvon,IDCJDW6024
+wa,Carnegie,IDCJDW6025
+wa,Christmas Creek,IDCJDW6150
+wa,Christmas Island,IDCJDW6026
+wa,Cocos Islands,IDCJDW6027
+wa,Collie,IDCJDW6028
+wa,Coondewanna,IDCJDW6151
+wa,Corrigin,IDCJDW6029
+wa,Cunderdin,IDCJDW6030
+wa,Curtin RAAF Base,IDCJDW6031
+wa,Cygnet Bay,IDCJDW6032
+wa,Dalwallinu,IDCJDW6033
+wa,Degrussa,IDCJDW6155
+wa,Denham,IDCJDW6034
+wa,Derby,IDCJDW6035
+wa,Donnybrook,IDCJDW6036
+wa,Doongan,IDCJDW6037
+wa,Dwellingup,IDCJDW6038
+wa,Emu Creek,IDCJDW6101
+wa,Esperance,IDCJDW6040
+wa,Esperance Airport,IDCJDW6041
+wa,Eucla,IDCJDW6042
+wa,Eyre,IDCJDW6043
+wa,Fitzroy Crossing,IDCJDW6044
+wa,Forrest,IDCJDW6045
+wa,Fortescue Dave Forrest,IDCJDW6153
+wa,Garden Island,IDCJDW6046
+wa,Gascoyne Junction,IDCJDW6047
+wa,Geraldton,IDCJDW6048
+wa,Giles,IDCJDW6049
+wa,Gingin,IDCJDW6050
+wa,Goomalling,IDCJDW6139
+wa,Gooseberry Hill,IDCJDW6165
+wa,Gosnells,IDCJDW6051
+wa,Halls Creek,IDCJDW6052
+wa,Halls Creek Meteorological Office,IDCJDW6085
+wa,Hopetoun,IDCJDW6054
+wa,Hyden,IDCJDW6055
+wa,Jacup (Jerramungup District),IDCJDW6058
+wa,Jandakot,IDCJDW6056
+wa,Jarrahwood,IDCJDW6057
+wa,Jurien,IDCJDW6059
+wa,Kalbarri,IDCJDW6060
+wa,Kalgoorlie-Boulder,IDCJDW6061
+wa,Kalumburu,IDCJDW6062
+wa,Karijini North,IDCJDW6169
+wa,Karnet,IDCJDW6063
+wa,Karratha,IDCJDW6064
+wa,Katanning,IDCJDW6065
+wa,Kellerberrin,IDCJDW6066
+wa,Kununurra,IDCJDW6068
+wa,Lake Grace,IDCJDW6070
+wa,Lancelin,IDCJDW6170
+wa,Laverton,IDCJDW6072
+wa,Learmonth,IDCJDW6073
+wa,Legendre Island,IDCJDW6157
+wa,Leinster,IDCJDW6074
+wa,Leonora,IDCJDW6075
+wa,Lombadina,IDCJDW6166
+wa,Mandora,IDCJDW6076
+wa,Mandurah,IDCJDW6077
+wa,Manjimup,IDCJDW6078
+wa,Marble Bar,IDCJDW6079
+wa,Mardie,IDCJDW6080
+wa,Meekatharra,IDCJDW6083
+wa,Melville Water,IDCJDW6161
+wa,Merredin,IDCJDW6084
+wa,Millendon (Swan Valley),IDCJDW6005
+wa,Morawa,IDCJDW6086
+wa,Mount Barker,IDCJDW6088
+wa,Mount Elizabeth,IDCJDW6089
+wa,Mount Keith,IDCJDW6154
+wa,Mount Magnet,IDCJDW6090
+wa,Mullewa,IDCJDW6140
+wa,Munglinup West,IDCJDW6091
+wa,Murchison,IDCJDW6092
+wa,Narembeen,IDCJDW6093
+wa,Narrogin,IDCJDW6094
+wa,Newdegate,IDCJDW6095
+wa,Newman,IDCJDW6096
+wa,Norseman,IDCJDW6097
+wa,North Island (Abrolhos),IDCJDW6099
+wa,Northam,IDCJDW6100
+wa,Ocean Reef,IDCJDW6162
+wa,Ongerup,IDCJDW6102
+wa,Onslow,IDCJDW6103
+wa,Paraburdoo,IDCJDW6105
+wa,Pardoo,IDCJDW6106
+wa,Paynes Find,IDCJDW6107
+wa,Pearce RAAF Base,IDCJDW6108
+wa,Pemberton,IDCJDW6109
+wa,Perth,IDCJDW6111
+wa,Perth Airport,IDCJDW6110
+wa,Pingelly,IDCJDW6112
+wa,Port Hedland,IDCJDW6113
+wa,Ravensthorpe,IDCJDW6114
+wa,Red Rocks Point,IDCJDW6115
+wa,Rocky Gully,IDCJDW6116
+wa,Roebourne,IDCJDW6117
+wa,Rottnest Island,IDCJDW6118
+wa,Rowley Shoals,IDCJDW6164
+wa,Salmon Gums,IDCJDW6119
+wa,Shannon (Northcliffe District),IDCJDW6098
+wa,Shark Bay,IDCJDW6158
+wa,Southern Cross,IDCJDW6120
+wa,Swanbourne,IDCJDW6121
+tas,Bicheno,IDCJDW7001
+tas,Bushy Park,IDCJDW7005
+tas,Butlers Gorge,IDCJDW7059
+tas,Campania,IDCJDW7006
+tas,Cape Bruny,IDCJDW7007
+tas,Cape Grim,IDCJDW7008
+tas,Cape Sorell,IDCJDW7009
+tas,Cressy,IDCJDW7011
+tas,Currie,IDCJDW7012
+tas,Dennes Point,IDCJDW7040
+tas,Devonport,IDCJDW7013
+tas,Dover,IDCJDW7014
+tas,Dunalley,IDCJDW7061
+tas,Fingal,IDCJDW7016
+tas,Friendly Beaches,IDCJDW7017
+tas,Geeveston,IDCJDW7018
+tas,Grove,IDCJDW7019
+tas,Hartz Mountains,IDCJDW7020
+tas,Hobart,IDCJDW7021
+tas,Hobart Airport,IDCJDW7062
+tas,Hobart Airport West,IDCJDW7022
+tas,Hogan Island,IDCJDW3088
+tas,Kunanyi / Mount Wellington,IDCJDW7037
+tas,Lake Leake,IDCJDW7023
+tas,Lake St Clair,IDCJDW7024
+tas,Larapuna (Eddystone Point),IDCJDW7015
+tas,Launceston,IDCJDW7025
+tas,Launceston Airport,IDCJDW7026
+tas,Liawenee,IDCJDW7027
+tas,Low Head,IDCJDW7028
+tas,Low Rocky Point,IDCJDW7029
+tas,Luncheon Hill,IDCJDW7030
+tas,Maatsuyker Island,IDCJDW7031
+tas,Macquarie Island,IDCJDW9204
+tas,Maria Island,IDCJDW7010
+tas,Marrawah,IDCJDW7032
+tas,Maydena,IDCJDW7033
+tas,Melton Mowbray,IDCJDW7034
+tas,Mount Read,IDCJDW7036
+tas,Orford,IDCJDW7038
+tas,Ouse,IDCJDW7039
+tas,Ross,IDCJDW7042
+nt,Alice Springs,IDCJDW8002
+nt,Arltunga,IDCJDW8004
+nt,Batchelor,IDCJDW8005
+nt,Borroloola,IDCJDW8007
+nt,Bradshaw,IDCJDW8008
+nt,Bradshaw (Angallari Valley),IDCJDW8040
+nt,Bradshaw (Koolendong Valley),IDCJDW8066
+nt,Brunette Downs,IDCJDW8009
+nt,Bulman,IDCJDW8062
+nt,Cape Wessel,IDCJDW8064
+nt,Central Arnhem Plateau,IDCJDW8063
+nt,Centre Island,IDCJDW8010
+nt,Channel Point,IDCJDW8011
+nt,Charles Point,IDCJDW8058
+nt,Croker Island,IDCJDW8065
+nt,Curtin Springs,IDCJDW8012
+nt,Daly Waters,IDCJDW8013
+nt,Darwin,IDCJDW8014
+nt,Delamere,IDCJDW8015
+nt,Douglas River Research Station,IDCJDW8016
+nt,Dum In Mirrie Island,IDCJDW8017
+nt,Elliott,IDCJDW8019
+nt,Gove Airport,IDCJDW8067
+nt,Groote Eylandt Airport,IDCJDW8021
+nt,Jabiru,IDCJDW8022
+nt,Jervois,IDCJDW8023
+nt,Kangaroo Flats,IDCJDW8018
+nt,Katherine,IDCJDW8024
+nt,Knuckey Lagooon,IDCJDW8068
+nt,Kulgera,IDCJDW8026
+nt,Lajamanu,IDCJDW8027
+nt,Mango Farm,IDCJDW8029
+nt,Maningrida,IDCJDW8030
+nt,McArthur River Mine,IDCJDW8031
+nt,McCluer Island,IDCJDW8032
+nt,Middle Point (Humpty Doo),IDCJDW8033
+nt,Milingimbi,IDCJDW8034
+nt,Mount Bundey North,IDCJDW8025
+nt,Mount Bundey South,IDCJDW8003
+nt,Murganella,IDCJDW8060
+nt,Ngayawili (Elcho Island),IDCJDW8035
+nt,Ngukurr,IDCJDW8036
+nt,Nhulunbuy [Gove],IDCJDW8020
+nt,Noonamah,IDCJDW8061
+nt,Oenpelli,IDCJDW8038
+nt,Pirlangimpi,IDCJDW8057
+nt,Point Fawcett (Bathurst Island),IDCJDW8042
+nt,Point Stuart,IDCJDW8059
+nt,Port Keats,IDCJDW8043
+nt,Rabbit Flat,IDCJDW8044
+nt,Tennant Creek,IDCJDW8045
+nt,Ti-Tree (Territory Grape Farm),IDCJDW8046
+nt,Timber Creek,IDCJDW8047
+nt,Tindal RAAF,IDCJDW8048
+nt,Uluru / Ayers Rock,IDCJDW8056
+nt,Victoria River Downs,IDCJDW8049
+antarctica,Casey,IDCJDW9203
+antarctica,Davis,IDCJDW9201
+antarctica,Macquarie Island,IDCJDW9204
+antarctica,Mawson,IDCJDW9202
+offshoreIslands,Christmas Island,IDCJDW6026
+offshoreIslands,Cocos Islands,IDCJDW6027
+offshoreIslands,Flinders Reef,IDCJDW4043
+offshoreIslands,Hogan Island,IDCJDW3088
+offshoreIslands,Holmes Reef,IDCJDW4058
+offshoreIslands,Lord Howe Island,IDCJDW2077
+offshoreIslands,Lord Howe Island (Windy Point) [Wind Only],IDCJDW2190
+offshoreIslands,Macquarie Island,IDCJDW9204
+offshoreIslands,Norfolk Island,IDCJDW2100
+offshoreIslands,Point Fawcett (Bathurst Island),IDCJDW8042
+offshoreIslands,Willis Island,IDCJDW4134
