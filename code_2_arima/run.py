@@ -12,7 +12,7 @@ from statsmodels.tsa.arima.model import ARIMA
 # custom
 from pull_data import read_data, update_data
 
-update_data(12, 'data/raw_data.csv')
+update_data('data/raw_data.csv')
 bom = read_data('data/raw_data.csv')
 
 target_col = 'Maximum temperature (°C)'

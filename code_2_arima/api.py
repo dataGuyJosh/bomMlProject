@@ -12,7 +12,7 @@ from starlette import status
 app = FastAPI()
 
 
-update_data(12, 'data/raw_data.csv')
+update_data('data/raw_data.csv')
 bom = read_data('data/raw_data.csv')
 
 
