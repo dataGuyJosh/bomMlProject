@@ -16,16 +16,16 @@ def get_data(station_id='IDCJDW3049', n_months=12, end_month_offset=None):
     for i in month_strs:
         i_bom_url = bom_url.replace('~', i)
         response = requests.get(i_bom_url).text
+        # remove header text for CSV parsing
+        response = '\n'.join(row[row.index(',')+1:] for row in response.split('\n') if row.startswith(','))
         # try to read response as CSV, skip on failure
         try:
-            month_df = pd.read_csv(
-                StringIO(response), skiprows=5).iloc[:, 1:]
-        except:
-            print(f'skipped {station_id} {i}')
+            month_df = pd.read_csv(StringIO(response))
+        except Exception as e:
+            print(f'skipped {station_id} {i} {e}')
             continue
 
-        df = pd.concat([df, month_df])
-
+        df = pd.concat([df, month_df], ignore_index=True)
     return df
 
 
