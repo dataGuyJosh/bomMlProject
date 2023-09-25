@@ -3,10 +3,8 @@ fastapi
 matplotlib
 numpy
 pandas
-pandasql
 requests
 scikit-learn
-scipy
-seaborn
 statsmodels
+torch
 uvicorn[standard]
