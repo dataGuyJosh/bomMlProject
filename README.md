@@ -1,10 +1,18 @@
 # BoM ML Project
-Putting together a weather prediction model (ideally with FastAPI) using BoM Weather data.
+This repo contains code related to weather prediction. The main code-base can be found under `code_arima` with draft applications located under `draft_apps`.
 
-# URLs
-- https://builtin.com/data-science/time-series-forecasting-python
-- https://www.analyticsvidhya.com/blog/2021/06/predictive-modelling-rain-prediction-in-australia-with-python/ --> the dataset used here only predicts "tomorrow" i.e. requires data for the day before
+# Setup Requirements
+This project requires Python 3, install python requirements located in `requirements.txt` by running the helper script `setupEnv.sh` which sets up a python environment.
 
+# How do I run/use the API?
+- open CLI in the parent directory
+- if you used `setupEnv.sh` above, activate the python environment using `source pythonenv/bin/activate`
+- run `python code_arima/api.py`
+- open a browser and navigate to `http://localhost:8000/docs`
+- at the time of writting, several endpoints exist:
+  - `/list_features/`: returns a JSON array of columns which can be used as the target of a model
+  - `/train_arima/`: train an ARIMA model using the target feature, this endpoint must be run before `/forecast/` in order to train a model to use for predictions
+  - `/forecast/`: predict future value(s) for the target feature, `predict_range` == true will return n predictions whereas `predict_range` == false will return the nth prediction e.g. forecast next weeks' temperature or the temperature 1 week from now respectively
 
 # Backlog
 ## TODO
@@ -33,3 +41,7 @@ Extract day, month & year of each date as a separate column, therefore creating 
 
 ### Create function to predict target given a date
 Given that we're only really asking for the date (as other variables are pulled from BoM) a user should be able to specify a date and have an estimated value returned.
+
+# URLs
+- https://builtin.com/data-science/time-series-forecasting-python
+- https://www.analyticsvidhya.com/blog/2021/06/predictive-modelling-rain-prediction-in-australia-with-python/ --> the dataset used here only predicts "tomorrow" i.e. requires data for the day before
