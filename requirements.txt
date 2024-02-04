@@ -6,5 +6,5 @@ pandas
 requests
 scikit-learn
 statsmodels
-torch
+# torch
 uvicorn[standard]
